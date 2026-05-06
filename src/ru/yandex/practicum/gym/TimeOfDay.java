@@ -30,12 +30,12 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return hours + ":" + minutes;
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (! (o instanceof TimeOfDay)) return false;
         TimeOfDay day = (TimeOfDay) o;
@@ -43,7 +43,7 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(hours, minutes);
     }
 }

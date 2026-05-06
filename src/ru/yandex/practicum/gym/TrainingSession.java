@@ -34,7 +34,7 @@ public class TrainingSession {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return group + "\n" + coach + "\n" + dayOfWeek + "\n" + timeOfDay;
     }
 }
