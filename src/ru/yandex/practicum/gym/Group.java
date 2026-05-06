@@ -27,7 +27,7 @@ public class Group {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Group: title: " + title + " age: " + age + " duration: " + duration;
     }
 }

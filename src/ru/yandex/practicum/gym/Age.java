@@ -4,7 +4,7 @@ public enum Age {
     CHILD, ADULT;
 
     @Override
-    public String toString(){
+    public String toString() {
         return name().toUpperCase();
     }
 }

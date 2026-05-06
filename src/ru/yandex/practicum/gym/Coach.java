@@ -30,7 +30,7 @@ public class Coach {
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Coach)) return false;
         Coach coach = (Coach) o;
@@ -40,13 +40,13 @@ public class Coach {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(surname, name, middleName);
     }
 
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Coach : " + surname + " " + name + " " + middleName;
     }
 
