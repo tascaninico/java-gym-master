@@ -11,11 +11,11 @@ public class Timetable {
         DayOfWeek dayOfWeek = trainingSession.getDayOfWeek();
         TimeOfDay timeOfDay = trainingSession.getTimeOfDay();
 
-        if (!timetable.containsKey(dayOfWeek)){
+        if (!timetable.containsKey(dayOfWeek)) {
             timetable.put(dayOfWeek, new TreeMap<>());
         }
 
-        if (!timetable.get(dayOfWeek).containsKey(timeOfDay)){
+        if (!timetable.get(dayOfWeek).containsKey(timeOfDay)) {
             timetable.get(dayOfWeek).put(timeOfDay, new ArrayList<>());
         }
 
@@ -32,25 +32,25 @@ public class Timetable {
 
     public List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
 
-        if (timetable.containsKey(dayOfWeek) && timetable.get(dayOfWeek).containsKey(timeOfDay)){
+        if (timetable.containsKey(dayOfWeek) && timetable.get(dayOfWeek).containsKey(timeOfDay)) {
             return timetable.get(dayOfWeek).get(timeOfDay);
         }
         return List.of();
     }
 
-    public List<Counter> getCountByCoaches(){
+    public List<Counter> getCountByCoaches() {
 
         HashMap<Coach, Integer> numOfTrainingsPerCoach = new HashMap<>();
 
         Set<DayOfWeek> dayOfWeekSet = timetable.keySet();
 
-        for (DayOfWeek dayOfWeek: dayOfWeekSet){
+        for (DayOfWeek dayOfWeek: dayOfWeekSet) {
             Set<TimeOfDay> timeOfDaySet = timetable.get(dayOfWeek).keySet();
 
-            for (TimeOfDay timeOfDay : timeOfDaySet){
-                for (TrainingSession trainingSession :timetable.get(dayOfWeek).get(timeOfDay)){
+            for (TimeOfDay timeOfDay : timeOfDaySet) {
+                for (TrainingSession trainingSession :timetable.get(dayOfWeek).get(timeOfDay)) {
 
-                    if (!(numOfTrainingsPerCoach.containsKey(trainingSession.getCoach()))){
+                    if (!(numOfTrainingsPerCoach.containsKey(trainingSession.getCoach()))) {
                         numOfTrainingsPerCoach.put(trainingSession.getCoach(), 1);
                     } else {
                         numOfTrainingsPerCoach.put(trainingSession.getCoach(),
@@ -62,7 +62,7 @@ public class Timetable {
 
         List<Counter> counters = new ArrayList<>();
 
-        for (Map.Entry<Coach, Integer> pair : numOfTrainingsPerCoach.entrySet()){
+        for (Map.Entry<Coach, Integer> pair : numOfTrainingsPerCoach.entrySet()) {
             counters.add(new Counter(pair.getKey(), pair.getValue()));
         }
 
@@ -70,5 +70,4 @@ public class Timetable {
 
         return counters;
     }
-
 }
