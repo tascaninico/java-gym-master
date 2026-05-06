@@ -6,12 +6,12 @@ public class Counter implements Comparable<Counter> {
 
     private int numberOfTraining;
 
-    public Counter(Coach coach, int numberOfTraining){
+    public Counter(Coach coach, int numberOfTraining) {
         this.coach = coach;
         this.numberOfTraining = numberOfTraining;
     }
 
-    public int getNumberOfTraining(){
+    public int getNumberOfTraining() {
         return numberOfTraining;
     }
 
@@ -20,13 +20,13 @@ public class Counter implements Comparable<Counter> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return coach.toString() + " = " + numberOfTraining;
     }
 
 
     @Override
-    public int compareTo(Counter other){
+    public int compareTo(Counter other) {
         return Integer.compare(numberOfTraining, other.getNumberOfTraining());
     }
 }
