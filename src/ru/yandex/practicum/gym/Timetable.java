@@ -54,7 +54,7 @@ public class Timetable {
                         numOfTrainingsPerCoach.put(trainingSession.getCoach(), 1);
                     } else {
                         numOfTrainingsPerCoach.put(trainingSession.getCoach(),
-                                numOfTrainingsPerCoach.get(trainingSession.getCoach())+1);
+                                numOfTrainingsPerCoach.get(trainingSession.getCoach()) + 1);
                     }
                 }
             }
